@@ -114,12 +114,12 @@ kubectl logs your-pod-id
 https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-kubernetes/
 
 设置 Dubbo 项目使用 Kubernetes 作为注册中心，这里通过 DEFAULT_MASTER_HOST指定使用默认 API-SERVER 集群地址 kubernetes.default.svc，同时还指定了
-namespace、trustCerts 两个参数
+namespace、trustCerts 两个参数, 比如：
 
 ```properties
 dubbo.application.name=dubbo-samples-apiserver-provider
 dubbo.application.metadataServicePort=20885
-dubbo.registry.address=kubernetes://DEFAULT_MASTER_HOST?registry-type=service&duplicate=false&namespace=dubbo-demo&trustCerts=true
+dubbo.registry.address=kubernetes://DEFAULT_MASTER_HOST:443?registry-type=service&duplicate=false&namespace=dubbo-demo&trustCerts=true
 dubbo.protocol.name=dubbo
 dubbo.protocol.port=20880
 dubbo.application.qosEnable=true
